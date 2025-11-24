@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hrzn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a84" />
+      <stop offset="100%" stop-color="#ff9a84" />
+    </linearGradient>
+
+    <mask id="cutout-mask" maskUnits="userSpaceOnUse">
+      <rect width="512" height="512" fill="white" />
+      <rect x="115" y="230" width="289.125" height="14" rx="7" fill="black"/>
+      <rect x="130" y="200" width="253.57" height="14" rx="7" fill="black"/>
+    </mask>
+
+    <clipPath id="bottom-clip">
+      <rect x="0" y="256" width="512" height="120" />
+    </clipPath>
+  </defs>
+
+  <g transform="translate(256, 235) scale(1.3) translate(-256, -205.5)">
+    <!-- Bottom half of circle (transparent, clipped) -->
+    <path
+      d="M64 256 A192 192 0 0 0 448 256 Z"
+      fill="url(#hrzn)"
+      opacity="0"
+      clip-path="url(#bottom-clip)"
+    />
+
+    <!-- Horizon lines -->
+    <rect x="135" y="275.711" width="227.45" height="14" rx="7" fill="#27F1E0"/>
+    <rect x="125" y="304.062" width="192" height="14" rx="7" fill="#27F1E0"/>
+    <rect x="145" y="333.306" width="160" height="14" rx="7" fill="#27F1E0"/>
+
+    <!-- Top half of circle (solid with cutouts) - with rounded ends -->
+    <path
+      d="M64 256 
+         A192 192 0 0 1 448 256 
+         L448 256 
+         A7 7 0 0 1 434 256
+         L78 256
+         A7 7 0 0 1 64 256
+         Z"
+      fill="url(#hrzn)"
+      mask="url(#cutout-mask)"
+    />
+  </g>
+</svg>
